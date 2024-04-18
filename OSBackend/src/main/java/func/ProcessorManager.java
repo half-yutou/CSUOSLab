@@ -40,7 +40,8 @@ public class ProcessorManager{
             task.curCodeIndex++;
             resultTime -= 1;
             try {
-                System.out.printf("pid: %d is Executing command type %d at %d int memory %d\n",
+                System.out.printf("processor %s:p->id: %d is Executing command type %d at %d in memory %d\n",
+                        Thread.currentThread().getName(),
                         task.pid, cmd.type, curPoint, task.allocatedAddress.startIndex);
                 //使用线程休眠模拟进程执行任务的时间
                 Thread.sleep(cmd.time * 1000L);

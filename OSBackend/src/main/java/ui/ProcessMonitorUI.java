@@ -90,8 +90,9 @@ public class ProcessMonitorUI extends JFrame {
         ui.redirectConsoleOutput();
         ui.setVisible(true);
         ProcessThread cpu = new ProcessThread();
-        new Thread(cpu).start();
-        new Thread(cpu).start();
+        //模拟双核cpu
+        new Thread(cpu, "cpu1").start();
+        new Thread(cpu, "cpu2").start();
 
     }
 }
